@@ -341,30 +341,7 @@ def Scan(path, files, mediaList, subdirs, language=None, root=None):
   # Stack the results.
   if shouldStack:
     Stack.Scan(path, files, mediaList, subdirs)
-
-
-
-
-# START OF MY EDITS
-  for m in mediaList:
-    if show_applies(m.show):
-      m.episode = (m.episode * 2) - 1
-
-def show_applies(show):
-  return (show == "Nature Cat" 
-          or show == "The Cat in the Hat Knows a Lot About That"
-          or show == "Daniel Tiger's Neighborhood"
-          or show == "Dinosaur Train"
-          or show == "Pinkalicious & Peterrific"
-          or show == "Splash and Bubbles"
-          or show == "Curious George")
-# END OF MY EDITS
-
-
-
-
-
-
+  
 def find_data(atom, name):
   child = atomsearch.find_path(atom, name)
   data_atom = child.find('data')
